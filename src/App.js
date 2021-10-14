@@ -48,10 +48,6 @@ function App() {
         setPersons([...persons, data]);
         console.log("Persona ", birthday.id, " añadido" )
      
-      /*  console.log(birthday, "Clickeado el cumple")
-      const id = Math.floor(Math.random()* 900) + 1
-      const newBirtday = {...birthday, id}
-      setPersons([...persons, newBirtday]) */
     }
 
   return (
