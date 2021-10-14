@@ -1,23 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import Birthdays from './Components/Birthdays';
+import Header from './Components/Header';
+
+
 
 function App() {
+    const [persons, setPersons] =useState([
+    ]);
+
+
+    useEffect(() =>{
+      const getPerson = async () =>{
+        const personServer = await fetchPerson()
+        setPersons(personServer)
+      }
+      getPerson();
+    }, [])
+
+    const fetchPerson = async () => {
+        try{
+          const res = await fetch(`http://localhost:5000/persons`);
+          const data = await res.json();
+          return data
+        }catch(error){
+          console.log(error)
+
+        }
+    }
+
+    const deleteHanddler = async (id) =>{
+      await fetch(`http://localhost:5000/persons/${id}`, {method: 'DELETE',})
+      setPersons(persons.filter((person) => person.id !== id))
+      console.log(id, "Borrado")
+    }
+
+    const addHanddler = async(birthday) => {
+      const res = await fetch(`http://localhost:5000/persons`, {
+        method: 'POST',
+        headers: {
+          'Content-type' : 'application/json'
+        },
+        body: JSON.stringify(birthday),})
+
+        const data = await res.json()
+        setPersons([...persons, data]);
+        console.log("Persona ", birthday.id, " añadido" )
+     
+      /*  console.log(birthday, "Clickeado el cumple")
+      const id = Math.floor(Math.random()* 900) + 1
+      const newBirtday = {...birthday, id}
+      setPersons([...persons, newBirtday]) */
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header persons={persons} addHanddler={addHanddler} />
+      <Birthdays persons={persons} deleteHanddler={deleteHanddler} />
     </div>
   );
 }

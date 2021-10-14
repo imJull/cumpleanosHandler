@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "persons": [
+    {
+      "id": 2,
+      "name": "Hester Hogan",
+      "age": 32,
+      "image": "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Lola Gardner",
+      "age": 29,
+      "image": "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg"
+    },
+    {
+      "name": "StoopidXool",
+      "age": "23",
+      "image": "https://images.genius.com/40de8ef0d1b432f0eabb0e5de917b460.653x653x1.jpg",
+      "id": 4
+    },
+    {
+      "name": "Rick",
+      "age": "96",
+      "image": "f",
+      "id": 5
+    },
+    {
+      "name": "Jonh Cena",
+      "age": "51",
+      "image": "https://th.bing.com/th/id/R.6352060b2f2f8b62edafc4fdccba9c4d?rik=ujoziZ5BlS7wdA&pid=ImgRaw&r=0",
+      "id": 6
+    }
+  ]
+}
