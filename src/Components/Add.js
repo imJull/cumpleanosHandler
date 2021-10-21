@@ -39,7 +39,7 @@ const Add = ({addHanddler}) => {
                     <TextField type="text" value={image} onChange={(e) => setImage(e.target.value)} id="outlined-basic" label="Imagen" variant="outlined" />
                 
                 <div>
-                    <Button type="submit" variant="contained">AGREGAR</Button>                    
+                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>                    
                </div>
                 
             </Box>
