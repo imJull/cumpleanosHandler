@@ -1,25 +1,36 @@
+import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 import { useState } from 'react';
+
+
 
 const Add = ({addHanddler}) => {
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
     const [image, setImage] = useState("")
 
+
+
     const submitHanddler = (e) => {
+
+        
         e.preventDefault();
 
         if (age === "" || name === ""){
             alert("El nombre y edad son obligatorios")
+            
         }else{        
             addHanddler({name, age, image})
-
             setName("")
             setImage("")
-            setAge("")}
+            setAge("")
+  
+        }
     }
 
     return (
@@ -39,12 +50,15 @@ const Add = ({addHanddler}) => {
                     <TextField type="text" value={image} onChange={(e) => setImage(e.target.value)} id="outlined-basic" label="Imagen" variant="outlined" />
                 
                 <div>
-                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>                    
+                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>
+                    
+                                     
                </div>
-                
+                 
             </Box>
         </div>
     );
 }
 
+/* https://static.hiphopdx.com/2018/09/yung-bans-1-800x600.jpg */
 export default Add

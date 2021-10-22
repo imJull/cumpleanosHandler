@@ -46,6 +46,12 @@
       "age": "51",
       "image": "https://th.bing.com/th/id/R.6352060b2f2f8b62edafc4fdccba9c4d?rik=ujoziZ5BlS7wdA&pid=ImgRaw&r=0",
       "id": 6
+    },
+    {
+      "name": "Bnas",
+      "age": "23",
+      "image": "https://static.hiphopdx.com/2018/09/yung-bans-1-800x600.jpg",
+      "id": 7
     }
   ]
 }
