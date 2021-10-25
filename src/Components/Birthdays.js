@@ -1,11 +1,10 @@
 import Birthday from "./Birthday"
-import BirthdayDetail from "./BirthdayDetail";
 
 
 const Birthdays = ( {persons, deleteHanddler} ) => {
     
     const people = persons.map((person) => {
-        const {id, age, name, image} = person;
+        const {id} = person;
         return(
             <Birthday key={id} person={person} deleteHanddler={deleteHanddler} />
         )

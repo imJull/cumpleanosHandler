@@ -2,9 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
 import { useState } from 'react';
 
 
@@ -50,9 +47,7 @@ const Add = ({addHanddler}) => {
                     <TextField type="text" value={image} onChange={(e) => setImage(e.target.value)} id="outlined-basic" label="Imagen" variant="outlined" />
                 
                 <div>
-                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>
-                    
-                                     
+                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>                  
                </div>
                  
             </Box>

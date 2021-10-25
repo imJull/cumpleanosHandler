@@ -7,6 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BirthdayDetail from './BirthdayDetail';
+import CustomizedDialogs from './Dialog';
 import { useState } from 'react';
 
 
@@ -42,11 +43,15 @@ const Birthday = ({person, deleteHanddler}) => {
                         </Typography>
                     }
                 />
-                <DeleteIcon onClick={() => deleteHanddler(person.id)} sx={{ color: "red", fontSize: 35, cursor: "pointer"}}/>
+                    <DeleteIcon onClick={() => deleteHanddler(person.id)} sx={{ color: "red", fontSize: 35, cursor: "pointer"}}/>
+                    <CustomizedDialogs person={person}>
+                        <BirthdayDetail person={person} />
+                    </CustomizedDialogs>
                 </ListItem>
                 <Divider variant="inset" component="li" />
             </List>
-                {showPerson && <BirthdayDetail person={person}/>}
+               
+                
         </div>
     )
 }

@@ -15,7 +15,8 @@ const Header = ( {persons, addHanddler} ) => {
             <h1>Estos </h1>
             <p>{persons.length} pendientes</p>
             <ButtonAdd showAddHanddler={showAddHanddler} />
-            {showAdd && <Add addHanddler={addHanddler} />}
+            {showAdd && 
+            <Add addHanddler={addHanddler} />}
         </div>
     )
 }
