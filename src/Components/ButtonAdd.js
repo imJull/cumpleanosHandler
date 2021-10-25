@@ -18,7 +18,7 @@ const ButtonAdd = ( {showAddHanddler} ) => {
 
     return (
         <>
-           <Button color={!btn ? "primary" : "secondary" } style={{backgroundColor:"color"}} onClick={btnToggle} style={{background:"color"}} variant="contained">{!btn ? txtColor.add : txtColor.back }</Button>
+           <Button color={!btn ? "primary" : "secondary" } style={{backgroundColor:"color"}} onClick={btnToggle} variant="contained">{!btn ? txtColor.add : txtColor.back }</Button>
         </>
     )
 }

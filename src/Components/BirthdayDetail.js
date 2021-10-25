@@ -4,8 +4,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-const BirthdayDetail = ({ detail }) => {
-     const {age, name, image} = detail
+const BirthdayDetail = ({ person }) => {
+     const {age, name, image} = person
     return (
         <Card sx={{ maxWidth: 545, maxHeight: 800 }}>
         <CardActionArea>
