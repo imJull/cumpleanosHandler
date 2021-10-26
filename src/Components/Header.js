@@ -3,7 +3,7 @@ import ButtonAdd from "./ButtonAdd"
 import { Modal } from '@mui/material';
 import { useState } from "react"
 
-const Header = ( { persons } ) => {
+const Header = ( { persons, addHanddler } ) => {
 
     const [modal, setModal] = useState(false);
 
@@ -20,7 +20,7 @@ const Header = ( { persons } ) => {
             <ButtonAdd toggleModal={toggleModal} />
              
                 <Modal open={modal} onClose={toggleModal}>
-                   <Add /> 
+                   <Add addHanddler={addHanddler}/> 
                 </Modal>
                 
         </div>

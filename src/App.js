@@ -3,6 +3,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Birthdays from './Components/Birthdays';
 import Header from './Components/Header';
+import AlertTitle from '@mui/material/AlertTitle';
+import Alert from '@mui/material/Alert';
 import { Container } from '@mui/material';
 
 
@@ -31,13 +33,26 @@ function App() {
         }
     }
 
-    const deleteHanddler = async (id) =>{
+    const alertDelete = (
+
+            <Alert severity="error">
+              <AlertTitle>Eliminado</AlertTitle>
+               ha sido Eliminado de la base de datos — <strong>Puede continuar!</strong>
+            </Alert>
+            )
+      
+
+    const deleteHanddler = async (id, name) =>{
       await fetch(`http://localhost:5000/persons/${id}`, {method: 'DELETE',})
-      setPersons(persons.filter((person) => person.id !== id))
-      console.log(id, "Borrado")
+      const conf = window.confirm("Desea eliminar a " + name + " del registro?")
+      if (conf){
+        setPersons(persons.filter((person) => person.id !== id ))
+        console.log(id, "Borrado")
+      }
+      
     }
 
-    const addHanddler = async(birthday) => {
+    const addHanddler = async (birthday) => {
       const res = await fetch(`http://localhost:5000/persons`, {
         method: 'POST',
         headers: {

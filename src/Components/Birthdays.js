@@ -4,7 +4,7 @@ import Birthday from "./Birthday"
 const Birthdays = ( {persons, deleteHanddler} ) => {
     
     const people = persons.map((person) => {
-        const {id} = person;
+        const {id, name} = person;
         return(
             <Birthday key={id} person={person} deleteHanddler={deleteHanddler} />
         )

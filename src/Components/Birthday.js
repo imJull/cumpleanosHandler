@@ -36,7 +36,7 @@ const Birthday = ({person, deleteHanddler}) => {
                         </Typography>
                     }
                 />
-                    <DeleteIcon onClick={() => deleteHanddler(person.id)} sx={{ color: "red", fontSize: 35, cursor: "pointer"}}/>
+                    <DeleteIcon onClick={() => deleteHanddler(person.id, person.name)} sx={{ color: "red", fontSize: 35, cursor: "pointer"}}/>
                     <CustomizedDialogs person={person}>
                         <BirthdayDetail person={person} />
                     </CustomizedDialogs>

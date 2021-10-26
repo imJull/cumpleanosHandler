@@ -21,7 +21,7 @@ const Add = ({addHanddler}) => {
             alert("El nombre y edad son obligatorios")
             
         }else{        
-            addHanddler({name, age, image})
+            addHanddler({name, age, image});
             setName("")
             setImage("")
             setAge("")
