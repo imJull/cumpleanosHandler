@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
-const ButtonAdd = ( {showAddHanddler, toggleModal} ) => {
+const ButtonAdd = ( { toggleModal } ) => {
     
 
     const btnToggle = () =>{

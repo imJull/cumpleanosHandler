@@ -18,7 +18,7 @@ const Birthdays = ( {persons, deleteHanddler} ) => {
     })   */  
 
     return (
-        <div>
+        <div className="birthdays-container">
             {people}
         </div>
     )

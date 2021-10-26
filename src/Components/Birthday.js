@@ -16,8 +16,8 @@ const Birthday = ({person, deleteHanddler}) => {
  
 
     return (
-        <div>           
-            <List key={person.id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <div className="birthday-container">           
+            <List className="birthday" key={person.id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar alt={person.name} src={person.image} />
