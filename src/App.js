@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Birthdays from './Components/Birthdays';
 import Header from './Components/Header';
+import { Container } from '@mui/material';
 
 
 
@@ -51,9 +52,11 @@ function App() {
     }
 
   return (
-    <div className="App">
-      <Header persons={persons} addHanddler={addHanddler} />
-      <Birthdays persons={persons} deleteHanddler={deleteHanddler} />
+    <div className="App general-container">
+      <Header  persons={persons} addHanddler={addHanddler} />
+      <Container>
+        <Birthdays persons={persons} deleteHanddler={deleteHanddler} />
+      </Container>
     </div>
   );
 }

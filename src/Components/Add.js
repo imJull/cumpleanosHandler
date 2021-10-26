@@ -30,7 +30,7 @@ const Add = ({addHanddler}) => {
     }
 
     const fieldStyle={
-        margin: "15px 10px",
+        margin: "5rem 10px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-evenly",
@@ -43,7 +43,7 @@ const Add = ({addHanddler}) => {
     const modalStyle={
       position: "absolute"  ,
       width:"80vw",
-      height:"80vh",
+      height:"60vh",
       background:"whitesmoke",
       border: "2px solid #000",
       boxShadow: "10px, 5px, 5px, black",
@@ -53,10 +53,12 @@ const Add = ({addHanddler}) => {
       transform: "translate(-50%, -50%)",
     }
 
+
+
     return (
         <Grid align="center" style={modalStyle}>
             <h1>Agregar Nuevo Usuario</h1>
-            <Box 
+            <Box
                 onSubmit={submitHanddler}
                 component="form"
                 sx={{
