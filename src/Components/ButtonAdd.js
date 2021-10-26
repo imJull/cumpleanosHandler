@@ -1,13 +1,15 @@
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
-const ButtonAdd = ( {showAddHanddler} ) => {
-    const [btn, setBtn] = useState(false)
+const ButtonAdd = ( {showAddHanddler, toggleModal} ) => {
+    
 
     const btnToggle = () =>{
-        showAddHanddler();
-        setBtn(!btn);
+          
+        toggleModal();
+        
     }
+
 
     const txtColor = {
         add: "Añadir",
@@ -18,7 +20,7 @@ const ButtonAdd = ( {showAddHanddler} ) => {
 
     return (
         <>
-           <Button color={!btn ? "primary" : "secondary" } style={{backgroundColor:"color"}} onClick={btnToggle} variant="contained">{!btn ? txtColor.add : txtColor.back }</Button>
+            <Button  style={{backgroundColor:"color"}} onClick={btnToggle} variant="contained">Añadir</Button>
         </>
     )
 }

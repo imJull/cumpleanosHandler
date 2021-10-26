@@ -52,6 +52,12 @@
       "age": "23",
       "image": "https://static.hiphopdx.com/2018/09/yung-bans-1-800x600.jpg",
       "id": 7
+    },
+    {
+      "name": "21",
+      "age": "2",
+      "image": "12",
+      "id": 8
     }
   ]
 }

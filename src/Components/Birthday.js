@@ -8,23 +8,16 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BirthdayDetail from './BirthdayDetail';
 import CustomizedDialogs from './Dialog';
-import { useState } from 'react';
+
 
 
 const Birthday = ({person, deleteHanddler}) => {
 
-     const [showPerson, setShowPerson] = useState(false)
-
-      const showPersonHandler = () => {
-            setShowPerson(!showPerson)
-            console.log(person.id)
-
-      }
-
+ 
 
     return (
         <div>           
-            <List key={person.id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }} onClick={showPersonHandler}>
+            <List key={person.id} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar alt={person.name} src={person.image} />

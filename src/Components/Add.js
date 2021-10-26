@@ -1,16 +1,15 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-
 
 
 const Add = ({addHanddler}) => {
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
     const [image, setImage] = useState("")
-
 
 
     const submitHanddler = (e) => {
@@ -30,30 +29,53 @@ const Add = ({addHanddler}) => {
         }
     }
 
+    const fieldStyle={
+        margin: "15px 10px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        button:{
+            width:"15rem",
+            height:"2.5rem"
+        }
+    }
+
+    const modalStyle={
+      position: "absolute"  ,
+      width:"80vw",
+      height:"80vh",
+      background:"whitesmoke",
+      border: "2px solid #000",
+      boxShadow: "10px, 5px, 5px, black",
+      padding: "2px, 4px, 3px",
+      top:'50%',
+      left:'50%',
+      transform: "translate(-50%, -50%)",
+    }
+
     return (
-        <div>
-            <Box
+        <Grid align="center" style={modalStyle}>
+            <h1>Agregar Nuevo Usuario</h1>
+            <Box 
                 onSubmit={submitHanddler}
                 component="form"
                 sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
+                    '& > :not(style)': { m: 2, width: '80%' },
                 }}
                 noValidate
                 autoComplete="off"
                 >
-                
+                <Grid style={fieldStyle}>
                     <TextField type="text" value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" label="Nombre" variant="outlined" />
                     <TextField type="number" value={age} onChange={(e) => setAge(e.target.value)} id="outlined-basic" label="Años" variant="outlined" />
                     <TextField type="text" value={image} onChange={(e) => setImage(e.target.value)} id="outlined-basic" label="Imagen" variant="outlined" />
+                </Grid>
                 
-                <div>
-                    <Button style={{position: "relative", left:"32rem"}} type="submit" variant="contained">AGREGAR</Button>                  
-               </div>
+                    <Button style={fieldStyle.button} type="submit" variant="contained">AGREGAR</Button>                  
+                
                  
             </Box>
-        </div>
+        </Grid>
     );
 }
-
-/* https://static.hiphopdx.com/2018/09/yung-bans-1-800x600.jpg */
 export default Add
