@@ -22,6 +22,12 @@
       "age": "23",
       "image": "https://www.altonivel.com.mx/wp-content/uploads/2021/01/marcus-rashford.jpg",
       "id": 1
+    },
+    {
+      "name": "Mateo Pessina",
+      "age": "22",
+      "image": "https://i0.wp.com/soycalcio.com/wp-content/uploads/2021/06/1003012446-1.jpg?resize=1080%2C675",
+      "id": 2
     }
   ]
 }

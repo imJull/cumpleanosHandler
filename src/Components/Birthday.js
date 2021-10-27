@@ -6,13 +6,17 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import BirthdayDetail from './BirthdayDetail';
 import CustomizedDialogs from './Dialog';
 
 
 
-const Birthday = ({person, deleteHanddler}) => {
+const Birthday = ({person, deleteHanddler, updateHanddler}) => {
 
+    const iconStyle ={
+        fontSize: 35, cursor: "pointer", color:"rgb(151, 65, 140)"
+    }
  
 
     return (
@@ -40,6 +44,8 @@ const Birthday = ({person, deleteHanddler}) => {
                     <CustomizedDialogs person={person}>
                         <BirthdayDetail person={person} />
                     </CustomizedDialogs>
+                    <EditTwoToneIcon onClick={() => updateHanddler(person.id)} style={iconStyle} />
+
                 </ListItem>
                 <Divider variant="inset" component="li" />
             </List>

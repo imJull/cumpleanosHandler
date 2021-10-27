@@ -16,7 +16,7 @@ const Header = ( { persons, addHanddler } ) => {
     return (
         <div className="header">
             <h1>Estos </h1>
-            <p>{persons.length} pendientes</p>
+            <p>{persons.length} usuarios en la base de datos</p>
             <ButtonAdd toggleModal={toggleModal} />
              
                 <Modal open={modal} onClose={toggleModal}>

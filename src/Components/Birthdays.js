@@ -1,12 +1,12 @@
 import Birthday from "./Birthday"
 
 
-const Birthdays = ( {persons, deleteHanddler} ) => {
+const Birthdays = ( {persons, deleteHanddler, updateHanddler} ) => {
     
     const people = persons.map((person) => {
-        const {id, name} = person;
+        const {id} = person;
         return(
-            <Birthday key={id} person={person} deleteHanddler={deleteHanddler} />
+            <Birthday key={id} person={person} deleteHanddler={deleteHanddler} updateHanddler={updateHanddler} />
         )
     })
 

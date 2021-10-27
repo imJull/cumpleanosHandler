@@ -43,9 +43,10 @@ function App() {
       
 
     const deleteHanddler = async (id, name) =>{
-      await fetch(`http://localhost:5000/persons/${id}`, {method: 'DELETE',})
       const conf = window.confirm("Desea eliminar a " + name + " del registro?")
+
       if (conf){
+        await fetch(`http://localhost:5000/persons/${id}`, {method: 'DELETE',})
         setPersons(persons.filter((person) => person.id !== id ))
         console.log(id, "Borrado")
       }
@@ -63,14 +64,17 @@ function App() {
         const data = await res.json()
         setPersons([...persons, data]);
         console.log("Persona ", birthday.id, " añadido" )
-     
+    }
+
+    const updateHanddler =  (id) =>{
+      console.log(id)
     }
 
   return (
     <div className="App general-container">
       <Header  persons={persons} addHanddler={addHanddler} />
       <Container>
-        <Birthdays persons={persons} deleteHanddler={deleteHanddler} />
+        <Birthdays persons={persons} deleteHanddler={deleteHanddler} updateHanddler={updateHanddler} />
       </Container>
     </div>
   );
