@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Birthdays from './Components/Birthdays';
 import Header from './Components/Header';
+import Spinner from './Components/Spinner/Spinner';
 import AlertTitle from '@mui/material/AlertTitle';
 import Alert from '@mui/material/Alert';
 import { Container } from '@mui/material';
@@ -10,6 +11,7 @@ import { Container } from '@mui/material';
 
 
 function App() {
+    const [loading, setLoading] = useState(true)
     const [persons, setPersons] =useState([
     ]);
 
@@ -20,6 +22,11 @@ function App() {
         setPersons(personServer)
       }
       getPerson();
+      setTimeout(() => {
+        setLoading(false)
+      }, 2500);
+      
+      
     }, [])
 
     const fetchPerson = async () => {
@@ -72,10 +79,11 @@ function App() {
 
   return (
     <div className="App general-container">
-      <Header  persons={persons} addHanddler={addHanddler} />
+      <Header loading={loading} persons={persons} addHanddler={addHanddler} />
+      { loading ? <Spinner /> :
       <Container>
         <Birthdays persons={persons} deleteHanddler={deleteHanddler} updateHanddler={updateHanddler} />
-      </Container>
+      </Container> }
     </div>
   );
 }

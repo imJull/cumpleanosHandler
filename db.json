@@ -28,6 +28,12 @@
       "age": "22",
       "image": "https://i0.wp.com/soycalcio.com/wp-content/uploads/2021/06/1003012446-1.jpg?resize=1080%2C675",
       "id": 2
+    },
+    {
+      "name": "Ben Brereton",
+      "age": "22",
+      "image": "https://imagenes.t13.cl/images/original/2021/10/1634327489-auno1321499.jpg",
+      "id": 3
     }
   ]
 }
