@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Birthdays from './Components/Birthdays';
 import Header from './Components/Header';
 import Spinner from './Components/Spinner/Spinner';
+import ErrorPage from './Components/Error/ErrorPage';
 import AlertTitle from '@mui/material/AlertTitle';
 import Alert from '@mui/material/Alert';
 import { Container } from '@mui/material';
@@ -11,7 +12,7 @@ import { Container } from '@mui/material';
 
 
 function App() {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [persons, setPersons] =useState([
     ]);
 
@@ -22,22 +23,26 @@ function App() {
         setPersons(personServer)
       }
       getPerson();
-      setTimeout(() => {
-        setLoading(false)
-      }, 2500);
-      
       
     }, [])
 
     const fetchPerson = async () => {
+      
         try{
+          setLoading(true)
           const res = await fetch(`http://localhost:5000/persons`);
           const data = await res.json();
+          setLoading(false)
           return data
+          
         }catch(error){
           console.log(error)
-
+          setTimeout(() =>{
+            console.log("El servidor no está activo")
+          },2000)
+          
         }
+        
     }
 
     const alertDelete = (

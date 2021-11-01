@@ -34,6 +34,12 @@
       "age": "22",
       "image": "https://imagenes.t13.cl/images/original/2021/10/1634327489-auno1321499.jpg",
       "id": 3
+    },
+    {
+      "name": "Yung Bans",
+      "age": "23",
+      "image": "https://th.bing.com/th/id/OIP.aKqAklVBR1YfdD-jxJUTzwHaEK?pid=ImgDet&rs=1",
+      "id": 4
     }
   ]
 }
