@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import { useState } from 'react';
 
 const ButtonAdd = ( { toggleModal } ) => {
     
@@ -8,14 +7,6 @@ const ButtonAdd = ( { toggleModal } ) => {
           
         toggleModal();
         
-    }
-
-
-    const txtColor = {
-        add: "Añadir",
-        back: "Volver",
-        cladd: "primary",
-        clback: "secondary"
     }
 
     return (

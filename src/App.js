@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Birthdays from './Components/Birthdays';
 import Header from './Components/Header';
 import Spinner from './Components/Spinner/Spinner';
-import ErrorPage from './Components/Error/ErrorPage';
 import AlertTitle from '@mui/material/AlertTitle';
 import Alert from '@mui/material/Alert';
 import { Container } from '@mui/material';
@@ -84,7 +83,7 @@ function App() {
 
   return (
     <div className="App general-container">
-      <Header loading={loading} persons={persons} addHanddler={addHanddler} />
+      <Header loading={loading} persons={persons} addHanddler={addHanddler} alertDelete={alertDelete} />
       { loading ? <Spinner /> :
       <Container>
         <Birthdays persons={persons} deleteHanddler={deleteHanddler} updateHanddler={updateHanddler} />
