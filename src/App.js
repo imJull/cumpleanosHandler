@@ -25,6 +25,7 @@ function App() {
       
     }, [])
 
+    //GET
     const fetchPerson = async () => {
       
         try{
@@ -44,15 +45,15 @@ function App() {
         
     }
 
-    const alertDelete = (
+ /*    const alertDelete = (
 
             <Alert severity="error">
               <AlertTitle>Eliminado</AlertTitle>
                ha sido Eliminado de la base de datos — <strong>Puede continuar!</strong>
             </Alert>
             )
-      
-
+       */
+//DELETE
     const deleteHanddler = async (id, name) =>{
       const conf = window.confirm("Desea eliminar a " + name + " del registro?")
 
@@ -64,6 +65,7 @@ function App() {
       
     }
 
+    //POST
     const addHanddler = async (birthday) => {
       const res = await fetch(`http://localhost:5000/persons`, {
         method: 'POST',
@@ -77,13 +79,14 @@ function App() {
         console.log("Persona ", birthday.id, " añadido" )
     }
 
+    //PUT (Update)
     const updateHanddler =  (id) =>{
       console.log(id)
     }
 
   return (
     <div className="App general-container">
-      <Header loading={loading} persons={persons} addHanddler={addHanddler} alertDelete={alertDelete} />
+      <Header loading={loading} persons={persons} addHanddler={addHanddler}/>
       { loading ? <Spinner /> :
       <Container>
         <Birthdays persons={persons} deleteHanddler={deleteHanddler} updateHanddler={updateHanddler} />
